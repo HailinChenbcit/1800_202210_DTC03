@@ -9,6 +9,10 @@ This browser based web application to ...
 * Hailin Chen - github: HailinChenbcit
 
     
+* My name is Carson and I'm a happy camper
+
+* Hi my name is Gary. I'm excited about this project because it will allow me to work in a team-based environment.
+	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
