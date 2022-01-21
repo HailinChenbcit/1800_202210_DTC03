@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ...
-Hailin Chen - github: HailinChenbcit
+* Hailin Chen - github: HailinChenbcit
 
     
 ## Technologies
