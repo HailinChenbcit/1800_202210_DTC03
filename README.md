@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ...
-	
+	* My name is Carson and I'm a happy camper
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
