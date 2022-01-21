@@ -7,7 +7,6 @@
 ## General Info
 This browser based web application to ...
 * Hailin Chen - github: HailinChenbcit
-
     
 * My name is Carson and I'm a happy camper
 
