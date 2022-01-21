@@ -6,6 +6,8 @@
 
 ## General Info
 This browser based web application to ...
+
+* Hi my name is Gary. I'm excited about this project because it will allow me to work in a team-based environment.
 	
 ## Technologies
 Technologies used for this project:
