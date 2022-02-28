@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>LineSkip</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="comp1800_dtc_03 boilerplate code" content="DTC03">
   <meta name="author" content="BCIT">
 
   <!------------------------>
@@ -37,7 +37,14 @@
   <!-- Other libraries and styles of your own -->
   <!-------------------------------------------->
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link rel="stylesheet" href="./styles/style.css">
+    <style>
+      #google_map{
+        height: 300px;
+        width: 300px;
 
+      }
+    </style>
 </head>
 
 <body>
@@ -46,14 +53,32 @@
 
   <!-- Main Body -->
   <main>
-    <div id="google_map"> Map View Holder</div>
+    <h2>Map View Holder</h2>
+    <div id="google_map"> 
+
+    </div>
   </main>
 
   <!-- Footer -->
   <nav id="footerPlaceholder"></nav>
 
+  <!-- Google Map -->
+  <script>
+    function initMap(){
+      var location = {lat: 49.283514066641814, lng: -123.11529771689504}
+      var map = new google.maps.Map(document.getElementById("google_map"), {
+        zoom: 15,
+        center: location,
+      });
+      var marker = new google.maps.Marker({
+        position: location,
+        maps: map,
+      })
+    }
+  </script>
   <!-- Copyright -->
   <script src="./scripts/skeleton.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDT50t9E4RU7-6fTD2FfwPto5fhxDoF70&callback=initMap"></script>
 
 </body>
 
