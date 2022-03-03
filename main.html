@@ -45,6 +45,37 @@
 
       }
     </style>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Taken', 'Empty'],
+      ['Taken',     63],
+      ['Empty',       37]
+    ]);
+
+    var options = {
+      pieHole: 0.45,
+      pieSliceTextStyle: {
+        color: 'white',
+      },
+      legend: 'none'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+    chart.draw(data, {
+      pieHole: 0.45,
+      colors: ['#F5C52C', '#808080',],
+      legend: 'none',
+      
+    });
+  }
+</script>
 </head>
 
 <body>
@@ -53,10 +84,16 @@
 
   <!-- Main Body -->
   <main>
+    <track id="capacity_track">
+    
+    <h2 style = "text-align: center;";">Current Capacity</h2>
+    <div id="donut_single" style="width: 900px; height: 500px;"></div>
+
     <h2>Map View Holder</h2>
     <div id="google_map"> 
 
     </div>
+
   </main>
 
   <!-- Footer -->

@@ -137,3 +137,27 @@ function writeWebcamData() {
             })
     })
 }
+
+function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Taken', 'Empty'],
+      ['Taken',     63],
+      ['Empty',       37]
+    ]);
+
+    var options = {
+      pieHole: 0.45,
+      pieSliceTextStyle: {
+        color: 'white',
+      },
+      legend: 'none'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+    chart.draw(data, {
+      pieHole: 0.45,
+      colors: ['#F5C52C', '#808080',],
+      legend: 'none',
+      
+    });
