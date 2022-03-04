@@ -105,3 +105,7 @@ background: -webkit-linear-gradient(
     background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
     height: 100vh;
 }
+
+form{
+    align-items: center;
+}
