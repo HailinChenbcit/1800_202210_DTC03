@@ -137,6 +137,7 @@ function writeWebcamData() {
             })
     })
 }
+<<<<<<< HEAD
 
 function doughnut
     var ctxD = document.getElementById("doughnutChart").getContext('2d');
@@ -154,3 +155,5 @@ function doughnut
     responsive: true
     }
     });
+=======
+>>>>>>> 96b204f48adc7daa0a90ab309f07c7dd1b3ca069
