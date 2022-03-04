@@ -36,7 +36,7 @@
     margin-bottom: 1rem;
 }
 .social a{
-    font-size: 4.5em;
+    font-size: 3.5em;
     padding: 3rem;
 }
 .fa-facebook{
@@ -86,4 +86,22 @@ hr.light-100{
     width: 100%;
     margin-top: .8rem;
     margin-bottom: 1rem;
+}
+
+.gradient-custom {
+/* fallback for old browsers */
+background: #a18cd1;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(
+    45deg,
+    rgba(29, 236, 197, 0.6),
+    rgba(91, 14, 214, 0.6) 100%
+);
+
+}
+
+#intro {
+    background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+    height: 100vh;
 }
