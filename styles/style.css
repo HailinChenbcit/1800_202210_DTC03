@@ -6,6 +6,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.nav{
-    float: right
+.details_suggest{
+    display: list-item;
 }
