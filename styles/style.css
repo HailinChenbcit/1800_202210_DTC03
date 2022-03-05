@@ -3,6 +3,11 @@
     height: 100%;
 
 }
+<<<<<<< HEAD
+
+.details_suggest{
+    display: list-item;
+=======
 .carousel-caption {
     position: absolute;
     top: 50%;
@@ -108,4 +113,5 @@ background: -webkit-linear-gradient(
 
 form{
     align-items: center;
+>>>>>>> 96b204f48adc7daa0a90ab309f07c7dd1b3ca069
 }

@@ -1,0 +1,84 @@
+<head>
+    <meta charset="utf-8">
+    <title>LineSkip</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="comp1800_dtc_03 boilerplate code" content="DTC03">
+    <meta name="author" content="BCIT">
+  
+    <!------------------------>
+    <!-- Required meta tags -->
+    <!------------------------>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+      </script>
+  
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+      <style>
+        #google_map{
+          height: 300px;
+          width: 300px;
+  
+        }
+      </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbarPlaceholder"></nav>
+  
+    <!-- Main Body -->
+    <main>
+
+      <h2>Map View Holder</h2>
+      <div id="google_map"> 
+  
+      </div>
+  
+    </main>
+  
+    <!-- Footer -->
+    <nav id="footerPlaceholder"></nav>
+  
+    <!-- Google Map -->
+    <script>
+      function initMap(){
+        var location = {lat: 49.283514066641814, lng: -123.11529771689504}
+        var map = new google.maps.Map(document.getElementById("google_map"), {
+          zoom: 15,
+          center: location,
+        });
+        var marker = new google.maps.Marker({
+          position: location,
+          maps: map,
+        })
+      }
+    </script>
+    <!-- Copyright -->
+    <script src="./scripts/skeleton.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDT50t9E4RU7-6fTD2FfwPto5fhxDoF70&callback=initMap"></script>
+  
+  </body>
+  
+  </html>
