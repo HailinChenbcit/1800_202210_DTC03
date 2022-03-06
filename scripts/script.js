@@ -137,14 +137,13 @@ function writeWebcamData() {
             })
     })
 }
-<<<<<<< HEAD
 
-function doughnut
+function doughnut()
     var ctxD = document.getElementById("doughnutChart").getContext('2d');
     var myLineChart = new Chart(ctxD, {
     type: 'doughnut',
     data: {
-    labels: ["Yellow", "Grey"]
+    labels: ["Yellow", "Grey"],
     datasets: [{
     data: [300, 50, 100, 40, 120],
     backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
@@ -155,5 +154,3 @@ function doughnut
     responsive: true
     }
     });
-=======
->>>>>>> 96b204f48adc7daa0a90ab309f07c7dd1b3ca069
