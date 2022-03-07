@@ -51,19 +51,10 @@
     <!-- MAPBOX -->
     <h2>Map View Holder</h2>
     <div id='map' style='width: 100%; height: 400px;'></div>
-    <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWNoZW4zIiwiYSI6ImNsMGZyNWRtZzB2angzanBjcHVkNTQ2YncifQ.fTdfEXaQ70WoIFLZ2QaRmQ';
-      const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-123.1153423036375, 49.28330056110343], // starting position
-        zoom: 13 // starting zoom
-      });
-
-      // Add zoom and rotation controls to the map.
-      map.addControl(new mapboxgl.NavigationControl());
-    </script>
     <!-- MAPBOX -->
+    <div>
+      <p>search bar?</p>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -71,7 +62,8 @@
 
   <!-- Copyright -->
   <script src="./scripts/skeleton.js"></script>
-
+  <!-- MAPBOX script -->
+  <script src="./scripts/map.js"></script>
 </body>
 
 </html>
