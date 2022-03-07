@@ -7,3 +7,93 @@
 .details_suggest{
     display: list-item;
 }
+
+.listing_cards{
+    text-align: center;
+}
+
+.background{
+    border-color: lightgray;
+    border: 1px;
+    border-style: hidden;
+    background-color: lightgray;
+    width: 60%;
+    align-items: center;
+    margin: auto;
+    padding: 10px
+}
+
+.restaurant_image{
+    width: 25%;
+}
+
+.detail_text{
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    text-align: left;
+    
+}
+
+.spacing{
+
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.checkin{
+    color: black;
+    border:
+    font-weight: bold;
+    background-color: #ffd349;
+    width: 150px;
+    height: 50px;
+}
+
+.checkin:hover{
+    opacity: 1;
+
+}
+
+.fa{
+    width: 15px;
+
+}
+.checked {
+    color: orange;
+  }
+
+.user{
+    padding-left: 26%;
+    text-align: left;
+    font-weight: 500;
+    font-size: small;
+}
+
+.review_text{
+    padding-left: 26%;
+    padding-right: 40%;
+    text-align: left;
+    font-weight: 500;
+    font-size: small;
+
+}
+
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
