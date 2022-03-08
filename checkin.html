@@ -60,13 +60,13 @@
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="Firstname">First name</label>
-                    <input type="text" id="Firstname" class="form-control" placeholder="First Name"/>
+                    <input type="text" id="FirstName" class="form-control" placeholder="First Name"/>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="form3Example2">Last name</label>
-                    <input type="text" id="form3Example2" class="form-control" placeholder="Last Name"/>
+                    <input type="text" id="LastName" class="form-control" placeholder="Last Name"/>
                   </div>
                 </div>
               </div>
@@ -77,10 +77,10 @@
                 <input type="email" id="email" class="form-control" placeholder="name@example.com"/>
               </div>
 
-              <!-- Password input -->
+              <!-- Phone number input -->
               <div class="form-outline mb-4">
                 <label class="form-label" for="Phone">Phone</label>
-                <input type="password" id="Phone" class="form-control" placeholder="Phone#"/>
+                <input type="number" id="Phone" class="form-control" placeholder="Phone#"/>
               </div>
 
               <!-- Timepicker -->
@@ -89,8 +89,22 @@
                 <input type="time" id ="timepicker" class="form-control" value="10:05 AM" />
               </div>
 
+              <!-- Party Size -->
+              <select class="custom-select">
+                <option selected>Party Size</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="1">4</option>
+                <option value="2">5</option>
+                <option value="3">6</option>
+                <option value="1">7</option>
+                <option value="2">8</option>
+                <option value="3">9</option>
+                <option value="1">10</option>
+              </select>
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
+              <button type="submit" class="btn btn-primary btn-block mb-4" onclick="writeCheckIn()">
                 Check in
               </button>
 
@@ -106,6 +120,7 @@
       <!-- Copyright -->
       <script src="./scripts/skeleton.js"></script>
       <script src="./scripts/firebaseAPI_TEAM03.js"></script>
+      <script src="./scripts/checkin.js"></script>
       <!-- <script src="./scripts/authentications.js"></script> -->
 
 </body>
