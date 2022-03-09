@@ -43,8 +43,6 @@ function writeCheckIn() {
         var email = userDoc.data().email;
         db.collection("CheckInRequests")
           .add({
-            restaurant: restaurantID,
-            userID: userID,
             FirstName: FirstName,
             LastName: LastName,
             email: email,
