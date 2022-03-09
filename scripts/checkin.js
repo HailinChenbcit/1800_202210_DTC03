@@ -30,11 +30,9 @@ function writeCheckIn() {
   let LastName = document.getElementById("LastName").value;
   let email = document.getElementById("email").value;
   let Phone = document.getElementById("Phone").value;
-  let timepicker = document.querySelector('timepicker').value;
-  let Scrambled = document.querySelector(
-    'input[name="scrambled"]:checked'
-  ).value;
-  console.log(Title, Level, Season, Description, Flooded, Scrambled);
+  let ArrivalTime = document.getElementById('ArrivalTime').value;
+  let PartySize = document.getElementById("PartySize").value;
+  console.log(FirstName, LastName, email, Phone, ArrivalTime, PartySize);
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -42,20 +40,20 @@ function writeCheckIn() {
       var userID = user.uid;
       //get the document for current user.
       currentUser.get().then((userDoc) => {
-        var userEmail = userDoc.data().email;
-        db.collection("Reviews")
+        var email = userDoc.data().email;
+        db.collection("CheckInRequests")
           .add({
-            code: hikeID,
+            restaurant: restaurantID,
             userID: userID,
-            title: Title,
-            level: Level,
-            season: Season,
-            description: Description,
-            flooded: Flooded,
-            scrambled: Scrambled,
+            FirstName: FirstName,
+            LastName: LastName,
+            email: email,
+            Phone: Phone,
+            ArrivalTime: ArrivalTime,
+            PartySize: PartySize,
           })
           .then(() => {
-            window.location.href = "thanks.html";
+            window.location.href = "confirmation.html";
           });
       });
     } else {
