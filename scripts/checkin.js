@@ -1,17 +1,17 @@
-// let hikeID = localStorage.getItem("hikeID");
+// let hikeID = localStorage.getItem("email");
 
-// db.collection("Hikes")
-//   .where("id", "==", hikeID)
+// db.collection("users")
+//   .where("email", "==", email)
 //   .get()
-//   .then((queryHike) => {
+//   .then((queryUsers) => {
 //     //see how many results you have got from the query
-//     size = queryHike.size;
+//     size = queryUsers.size;
 //     // get the documents of query
-//     Hikes = queryHike.docs;
+//     Users = queryUsers.docs;
 
 //     // We want to have one document per hike, so if the the result of
 //     //the query is more than one, we can check it right now and clean the DB if needed.
-//     if ((size = 1)) {
+//     if ((size == 1)) {
 //       var thisHike = Hikes[0].data();
 //       hikeName = thisHike.name;
 //       console.log(hikeName);
@@ -28,11 +28,11 @@ function writeCheckIn() {
   console.log("in");
   let FirstName = document.getElementById("FirstName").value;
   let LastName = document.getElementById("LastName").value;
-  let email = document.getElementById("email").value;
+  let Email = document.getElementById("Email").value;
   let Phone = document.getElementById("Phone").value;
   let ArrivalTime = document.getElementById('ArrivalTime').value;
   let PartySize = document.getElementById("PartySize").value;
-  console.log(FirstName, LastName, email, Phone, ArrivalTime, PartySize);
+  console.log(FirstName, LastName, Email, Phone, ArrivalTime, PartySize);
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -40,15 +40,16 @@ function writeCheckIn() {
       var userID = user.uid;
       //get the document for current user.
       currentUser.get().then((userDoc) => {
-        var email = userDoc.data().email;
+        var Email = userDoc.data().email;
         db.collection("CheckInRequests")
           .add({
             FirstName: FirstName,
             LastName: LastName,
-            email: email,
+            Email: Email,
             Phone: Phone,
             ArrivalTime: ArrivalTime,
             PartySize: PartySize,
+            User: userID,
           })
           .then(() => {
             window.location.href = "confirmation.html";
@@ -56,6 +57,7 @@ function writeCheckIn() {
       });
     } else {
       // No user is signed in.
+      console.log("no user signed in");
     }
   });
 }
