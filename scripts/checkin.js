@@ -30,8 +30,7 @@ function writeCheckIn() {
   let Email = document.getElementById("Email").value;
   let Phone = document.getElementById("Phone").value;
   let ArrivalTime = document.getElementById('ArrivalTime').value;
-  // let PartySize = document.getElementById("PartySize").value;
-  console.log(FirstName, LastName, Email, Phone, ArrivalTime, PartySize);
+  let PartySize = document.getElementById("PartySize").value;
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -39,7 +38,6 @@ function writeCheckIn() {
       var userID = user.uid;
       //get the document for current user.
       currentUser.get().then((userDoc) => {
-      // var Email = userDoc.data().email;
       // Start a new collection and add all data in it.
         db.collection("CheckInRequests")
           .add({
@@ -48,7 +46,7 @@ function writeCheckIn() {
             Email: Email,
             Phone: Phone,
             ArrivalTime: ArrivalTime,
-            // PartySize: PartySize,
+            PartySize: PartySize,
             User: userID,
           })
           .then(() => {
