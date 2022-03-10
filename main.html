@@ -42,6 +42,9 @@
   <script src="https://kit.fontawesome.com/3972ff60ea.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
 </head>
 
 <body>
@@ -67,7 +70,7 @@
           <img src="../images/background1.jpg" class="d-block w-100" loading="lazy">
           <div class="carousel-caption">
             <h1 class="display-2">LineSkip</h1>
-            <a href="./map.html" class="btn btn-outline-info btn-lg" role="button">Restaurnt Around Me</a>
+            <a href="./map.html" class="btn btn-outline-info btn-lg" role="button">Restaurants Around Me</a>
           </div>
         </div>
         <div class="carousel-item">
@@ -103,9 +106,33 @@
           </p>
         </div>
       <!-- Capacity -->
-            <track id="capacity_track">
-
             <h2 style="text-align: center;">Current Capacity Graph Display Here</h2>
+              <canvas id="capChart" style="width:100%;max-width:700px;display: block;margin: auto;">
+                <script>
+                  var xValues = ["Filled", "Empty"];
+                  var yValues = [25, 10];
+                  var barColors = ["#ffd349"];
+                  
+                  new Chart("capChart", {
+                      type: "doughnut",
+                      data: {
+                        labels: xValues,
+                        datasets: [{
+                          backgroundColor: barColors,
+                          data: yValues
+                        }]
+                      },
+                      options: {
+                        title: {
+                          display: true,
+                          text: "Current Capacity"
+                        }
+                      }
+                    });
+                  
+                  </script>
+                </canvas>
+
       <!-- Capacity -->
       </div>
     </div>
@@ -189,9 +216,7 @@
   <!-- Copyright -->
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/firebaseAPI_TEAM03.js"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDT50t9E4RU7-6fTD2FfwPto5fhxDoF70&callback=initMap"></script>
-
+ 
 </body>
 
 </html>

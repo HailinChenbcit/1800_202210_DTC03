@@ -22,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="./scripts/script.js"></script>
+  <script src="./scripts/script.js"></script>
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -45,69 +45,92 @@
 
 <body>
   <main>
-      <!-- Navigation -->
-      <nav id="navbarPlaceholder"></nav>
+    <!-- Navigation -->
+    <nav id="navbarPlaceholder"></nav>
 
-      <!-- Check in -->
-      <form class="mb-5">
-        <h4 class="mb-5 text-center"><strong>Check in Now!</strong></h4>
+    <!-- Check in -->
+    <form class="mb-5">
+      <h4 class="mb-5 text-center"><strong>Check in Now!</strong></h4>
 
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-6">
-            <form>
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="row mb-4">
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="Firstname">First name</label>
-                    <input type="text" id="Firstname" class="form-control" placeholder="First Name"/>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="form3Example2">Last name</label>
-                    <input type="text" id="form3Example2" class="form-control" placeholder="Last Name"/>
-                  </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="Firstname">First name</label>
+                  <input type="text" id="FirstName" class="form-control" placeholder="First Name" />
                 </div>
               </div>
-
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="name@example.com"/>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form3Example2">Last name</label>
+                  <input type="text" id="LastName" class="form-control" placeholder="Last Name" />
+                </div>
               </div>
+            </div>
 
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="Phone">Phone</label>
-                <input type="password" id="Phone" class="form-control" placeholder="Phone#"/>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="Email" class="form-control" placeholder="name@example.com" />
+            </div>
+
+            <!-- Phone number input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="Phone">Phone</label>
+              <input type="phone" id="Phone" class="form-control" placeholder="Phone#" />
+            </div>
+
+            <!-- Timepicker -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="cs-form form-outline">
+                  <label class="form-label" for="Firstname">Arrive Time</label>
+                  <input type="time" id="ArrivalTime" class="form-control"/>
+                </div>
               </div>
-
-              <!-- Timepicker -->
-              <div class="cs-form form-outline mb-4">
-                <label class="form-label" for="timepicker">Arrive Time</label>
-                <input type="time" id ="timepicker" class="form-control" value="10:05 AM" />
+              <!-- Party Size -->
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label">Party Size</label>
+                  <select id="PartySize" class="form-select" aria-label="Default select example">
+                    <option selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
               </div>
+            </div>
 
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Check in
-              </button>
+            <!-- Submit button -->
+            <button type="button" class="btn btn-primary btn-block mb-4" onclick="writeCheckIn()">
+              Check in
+            </button>
 
-              </div>
-            </form>
-          </div>
         </div>
-      <!-- Check in -->
+    </form>
+    </div>
+    </div>
+    <!-- Check in -->
 
-      <!-- Footer -->
-      <nav id="footerPlaceholder"></nav>
+    <!-- Footer -->
+    <nav id="footerPlaceholder"></nav>
 
-      <!-- Copyright -->
-      <script src="./scripts/skeleton.js"></script>
-      <script src="./scripts/firebaseAPI_TEAM03.js"></script>
-      <!-- <script src="./scripts/authentications.js"></script> -->
+    <!-- Copyright -->
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/firebaseAPI_TEAM03.js"></script>
+    <script src="./scripts/checkin.js"></script>
+    <!-- <script src="./scripts/authentications.js"></script> -->
 
 </body>
 
-</html> 
+</html>
