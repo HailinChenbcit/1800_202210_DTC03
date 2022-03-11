@@ -47,7 +47,7 @@ function writeCheckIn() {
             Phone: Phone,
             ArrivalTime: ArrivalTime,
             PartySize: PartySize,
-            User: userID,
+            UID: userID,
           })
           .then(() => {
             // console.log("successful write data")
