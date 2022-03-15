@@ -5,10 +5,23 @@ function showRestsOnMap() {
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-123.1153423036375, 49.28330056110343], // starting position
-        zoom: 14 // starting zoom
+        zoom: 12 // starting zoom
     });
 
+    // Navigation and User center button
     map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            // When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        })
+    );
+
     map.on('load', () => {
         const features = []
         db.collection("Restaurants").get().then(allRests => {
@@ -29,6 +42,7 @@ function showRestsOnMap() {
                     }
                 })
             })
+
             map.addSource('places', {
                 // This GeoJSON contains features that include an "icon"
                 // property. The value of the "icon" property corresponds
@@ -79,6 +93,7 @@ function showRestsOnMap() {
             map.on('mouseleave', 'places', () => {
                 map.getCanvas().style.cursor = '';
             });
+
         })
     });
 }
@@ -103,8 +118,3 @@ function showPosition(position) {
     nextStep();
 }
 
-// Show restaurants within 2 km
-function nextStep() {
-    console.log(userlat);
-    console.log(userlong);
-}
