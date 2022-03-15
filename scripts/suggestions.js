@@ -54,7 +54,8 @@ function populateCardsDynamically() {
                 let restCard = restListTemplate.content.cloneNode(true);
                 restCard.querySelector('.card-title').innerHTML = restName;
                 restCard.querySelector('.card-length').innerHTML = restID;
-                restCard.querySelector('a').onclick = () => setRestData(hikeID);
+                restCard.querySelector('a').onclick = () => setRestData(restID);
+                restCard.querySelector('img').src = `../images/${restID}.jpg`;
                 restCardGroup.appendChild(restCard);
             })
 
