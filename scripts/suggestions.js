@@ -49,12 +49,11 @@ function populateCardsDynamically() {
             allRestaurants.forEach(doc => {
                 var restName = doc.data().name;
                 var restID = doc.data().id;
-                // var restDescrip = doc.data().description
+                // var restDesc = doc.data().description
 
                 let restCard = restListTemplate.content.cloneNode(true);
                 restCard.querySelector('.card-title').innerHTML = restName;
-                restCard.querySelector('.card-length').innerHTML = restID;
-                restCard.querySelector('a').onclick = () => setRestData(restID);
+                restCard.querySelector('#check_in').onclick = () => setRestData(restID);
                 restCard.querySelector('img').src = `../images/${restID}.jpg`;
                 restCardGroup.appendChild(restCard);
             })
@@ -63,6 +62,7 @@ function populateCardsDynamically() {
 }
 populateCardsDynamically();
 
+// LocalStorage RestaurantName
 function setRestData(id) {
-    localStorage.setItem('restID', id);
+    localStorage.setItem("restID", id);
 }
