@@ -5,7 +5,7 @@ function showRestsOnMap() {
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-123.1153423036375, 49.28330056110343], // starting position
-        zoom: 12 // starting zoom
+        zoom: 14 // starting zoom
     });
 
     // Navigation and User center button
@@ -34,7 +34,7 @@ function showRestsOnMap() {
                     'type': 'Feature',
                     'properties': {
                         'description': `<strong>Current Capacity</strong><p><a href="${url}" target="_blank" title="Opens in a new window">${rest_name}</a> Some description here</p>`,
-                        'icon': 'bar-15'
+                        'icon': 'restaurant-15'
                     },
                     'geometry': {
                         'type': 'Point',
@@ -53,6 +53,7 @@ function showRestsOnMap() {
                     'features': features,
                 }
             })
+
             // Add a layer showing the places.
             map.addLayer({
                 'id': 'places',
@@ -61,6 +62,20 @@ function showRestsOnMap() {
                 'layout': {
                     'icon-image': '{icon}',
                     'icon-allow-overlap': true
+                }
+            });
+
+            // Draw circular search radius on the map
+            map.addLayer({
+                id: 'search-radius',
+                source: {
+                    type: 'geojson',
+                    data: { "type": "FeatureCollection", "features": [] }
+                },
+                type: 'fill',
+                paint: {
+                    'fill-color': '#FDFDF1',
+                    'fill-opacity': 0.4
                 }
             });
 
@@ -94,10 +109,20 @@ function showRestsOnMap() {
                 map.getCanvas().style.cursor = '';
             });
 
+            //Click to add circle -> show circle after user click 'locate' button 
+            map.on('click', function (e) {
+                var eventLngLat = [e.lngLat.lng, e.lngLat.lat];
+                console.log(eventLngLat)
+                var searchRadius = makeRadius(eventLngLat, 500);
+                map.getSource('search-radius').setData(searchRadius);
+
+            });
+
         })
     });
 }
 showRestsOnMap()
+
 
 // USER LOCATION
 function getLocation() {
@@ -115,6 +140,13 @@ var userlong;
 function showPosition(position) {
     userlat = position.coords.latitude;
     userlong = position.coords.longitude;
-    nextStep();
 }
 
+
+//makeRadius function
+function makeRadius(lngLatArray, radiusInMeters) {
+    var point = turf.point(lngLatArray)
+    var buffered = turf.buffer(point, radiusInMeters, { units: 'meters' });
+    return buffered;
+
+}
