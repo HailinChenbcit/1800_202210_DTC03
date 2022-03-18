@@ -1,29 +1,29 @@
-// let hikeID = localStorage.getItem("email");
+let restID = localStorage.getItem("restID");
 
-// db.collection("users")
-//   .where("email", "==", email)
-//   .get()
-//   .then((queryUsers) => {
-//     //see how many results you have got from the query
-//     size = queryUsers.size;
-//     // get the documents of query
-//     Users = queryUsers.docs;
+db.collection("Restaurants").where("id", "==", restID)
+  .get()
+  .then((queryRest) => {
+    //see how many results you have got from the query
+    size = queryRest.size;
+    console.log(size)
+    // get the documents of query
+    Rests = queryRest.docs;
 
-//     // We want to have one document per hike, so if the the result of
-//     //the query is more than one, we can check it right now and clean the DB if needed.
-//     if ((size == 1)) {
-//       var thisHike = Hikes[0].data();
-//       hikeName = thisHike.name;
-//       console.log(hikeName);
-//       document.getElementById("HikeName").innerHTML = hikeName;
-//     } else {
-//       console.log("Query has more than one data");
-//     }
-//   })
-//   .catch((error) => {
-//     console.log("Error getting documents: ", error);
-//   });
+    if ((size == 1)) {
+      var thisRest = Rests[0].data();
+      name = thisRest.name;
+      console.log(name);
+      document.getElementById("RestName").innerHTML = name;
+    } else {
+      console.log("Query has more than one data");
+    }
+  })
+  .catch((error) => {
+    console.log("Error getting documents: ", error);
+  });
 
+
+// Write Check-in form
 function writeCheckIn() {
   let FirstName = document.getElementById("FirstName").value;
   let LastName = document.getElementById("LastName").value;
@@ -38,7 +38,7 @@ function writeCheckIn() {
       var userID = user.uid;
       //get the document for current user.
       currentUser.get().then((userDoc) => {
-      // Start a new collection and add all data in it.
+        // Start a new collection and add all data in it.
         db.collection("CheckInRequests")
           .add({
             FirstName: FirstName,
@@ -47,7 +47,7 @@ function writeCheckIn() {
             Phone: Phone,
             ArrivalTime: ArrivalTime,
             PartySize: PartySize,
-            User: userID,
+            UID: userID,
           })
           .then(() => {
             // console.log("successful write data")

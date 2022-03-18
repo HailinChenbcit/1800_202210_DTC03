@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>LineSkip</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link rel="stylesheet" href="../styles/skelenton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+  <main>
+    <!-- Navigation -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <div class="b-example-divider"></div>
+    <!-- Content -->
+
+    <div class="listing_cards">
+
+      <div class="background">
+        <br>
+        <br>
+        <br>
+        <h3> Restaurant 1</h3>
+        <img
+          src="https://images.getbento.com/accounts/5d21d7abc160b36d5cd820a4adda5083/media/images/1625IMG_6939.jpg?w=1200&fit=max&auto=compress,format"
+          class="restaurant_image">
+
+
+        <br>
+
+        <br>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+
+        <p style="font-family: Arial, Helvetica, sans-serif;"> $ $ $</p>
+
+        <canvas id="capChart" style="width:100%;max-width:700px;display: block;margin: auto;">
+          <script>
+            var xValues = ["Filled", "Empty"];
+            var yValues = [25, 10];
+            var barColors = ["#ffd349"];
+
+            new Chart("capChart", {
+              type: "doughnut",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: "Current Capacity"
+                }
+              }
+            });
+
+          </script>
+        </canvas>
+
+        <div class="spacing"></div>
+
+        <p class="detail_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit dolores nemo vitae harum
+          fuga architecto quas ipsam in? Doloribus dolor eveniet libero dolore pariatur recusandae placeat excepturi aut
+          illo rerum.
+          Voluptatum facere nesciunt molestias eaque. Non nobis necessitatibus neque atque nam. Exercitationem,
+          reiciendis molestias. Libero voluptatum, similique qui dolorem, quidem numquam ratione fugit nemo, voluptas
+          consequatur velit veritatis. Rem, inventore!
+          Corrupti quos ipsa atque error cupiditate nam quidem consectetur sit facilis molestias. Totam harum sit
+          laudantium sequi perspiciatis et magnam saepe quasi consequuntur? Repudiandae dolorem maiores magni possimus
+          ad inventore!
+          Laudantium maiores ex accusamus perspiciatis aspernatur, fugiat repudiandae quibusdam sapiente, doloribus,
+          dolorem rerum nam? Laborum aliquid tempore ipsa dolore pariatur ratione eveniet natus ea! Eaque velit
+          molestias eligendi sapiente modi.</p>
+
+        <p class="spacing"></p>
+
+        <h3>Images</h3>
+
+
+        <p class="spacing"></p>
+
+        <h4 style="text-align: left; padding-left: 26%;">Reviews</h4>
+
+        <p class="user"> Steve Tanner</p>
+
+
+
+        <p class="review_text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aliquid reprehenderit
+          dolor aut possimus illo assumenda, nisi enim, tenetur harum pariatur beatae temporibus quidem consequuntur.
+          Maiores in vitae quos officiis!</p>
+
+        <p class="spacing"></p>
+
+
+        <a href="../checkin/checkin.html"><button class="checkin"> Check In </button></a>
+
+        <p class="spacing"></p>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="b-example-divider"></div>
+  </main>
+  <!-- Footer -->
+  <nav id="footerPlaceholder"></nav>
+
+  <!-- Copyright -->
+  <script src="../scripts/skeleton.js"></script>
+  <script src="../scripts/firebaseAPI_TEAM03.js"></script>
+
+</body>
+
+</html>
