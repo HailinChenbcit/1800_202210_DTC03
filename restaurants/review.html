@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>LineSkip</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+  <script src="../scripts/script.js"></script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link rel="stylesheet" href="../styles/skelenton.css">
+  <script src="https://kit.fontawesome.com/3972ff60ea.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <main>
+    <!-- Navigation -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <!-- Review  -->
+    <form class="mb-5">
+      <h4 class="mb-5 text-center"><span id="RestName"></span></h4>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="Firstname">First Name</label>
+                  <input type="text" id="FirstName" class="form-control" placeholder="Name" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form3Example2">Last name</label>
+                  <input type="text" id="LastName" class="form-control" placeholder="Last Name" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="Email" class="form-control" placeholder="name@example.com" />
+            </div>
+            <!-- Review input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="Review">Description</label>
+                <input type="email" id="Review" class="form-control" placeholder="Tell us about your time!" />
+              </div>
+
+              <!-- Rating -->
+              <label><span style="display:inline-block; font-weight: bold;">Rating </span></label>
+
+              <div></div>
+        
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" for="Rating" type="radio" name="rating" value="1">
+                  <label>1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" for="Rating" type="radio" name="rating" value="2">
+                  <label>2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" for="Rating" type="radio" name="rating" value="3">
+                  <label>3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" for="Rating" type="radio" name="rating" value="4">
+                <label>4</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" for="Rating" type="radio" name="rating" value="5">
+                <label>5</label>
+            </div>
+
+            <div>
+                <br>
+            <!-- Submit button -->
+            <button type="button" class="btn btn-primary btn-block mb-4" onclick="writeReview()">
+              Submit
+            </button>
+            </div>
+
+        </div>
+    </form>
+    </div>
+    </div>
+
+
+    <!-- Footer -->
+    <nav id="footerPlaceholder"></nav>
+
+    <!-- Copyright -->
+    <script src="../scripts/skeleton.js"></script>
+    <script src="../scripts/firebaseAPI_TEAM03.js"></script>
+    <script src="../scripts/review.js"></script>
+    <script src="../scripts/authentications.js"></script>
+
+</body>
+
+</html>
