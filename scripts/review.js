@@ -1,6 +1,6 @@
 let restID = localStorage.getItem("restID");
 
-db.collection("Reviews").where("id", "==", restID)
+db.collection("Restaurants").where("id", "==", restID)
   .get()
   .then((queryRest) => {
     //see how many results you have got from the query
@@ -45,6 +45,7 @@ function writeReview() {
             Email: Email,
             Review: Review,
             Rating: Rating,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
           })
           .then(() => {
             // console.log("successful write data")
