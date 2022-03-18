@@ -29,11 +29,13 @@ function showRestsOnMap() {
                 coordinates = doc.data().coordinates;
                 url = doc.data().url;
                 rest_name = doc.data().name;
+                cur_capacity = doc.data().current_population;
+                total_capacity = doc.data().capacity;
 
                 features.push({
                     'type': 'Feature',
                     'properties': {
-                        'description': `<strong>Current Capacity: ${cur_capacity}/${cur_capacity}</strong><p><a href="${url}" target="_blank" title="Opens in a new window">${rest_name}</a> Some description here</p>`,
+                        'description': `<strong>Current Capacity: ${cur_capacity}/${total_capacity}</strong><p><a href="${url}" target="_blank" title="Opens in a new window">${rest_name}</a> Some description here</p>`,
                         'icon': 'restaurant-15'
                     },
                     'geometry': {
