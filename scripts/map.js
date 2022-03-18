@@ -33,7 +33,7 @@ function showRestsOnMap() {
                 features.push({
                     'type': 'Feature',
                     'properties': {
-                        'description': `<strong>Current Capacity</strong><p><a href="${url}" target="_blank" title="Opens in a new window">${rest_name}</a> Some description here</p>`,
+                        'description': `<strong>Current Capacity: ${cur_capacity}/${cur_capacity}</strong><p><a href="${url}" target="_blank" title="Opens in a new window">${rest_name}</a> Some description here</p>`,
                         'icon': 'restaurant-15'
                     },
                     'geometry': {
