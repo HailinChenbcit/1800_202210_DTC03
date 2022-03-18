@@ -10,7 +10,7 @@ db.collection("Restaurants").where("id", "==", restID)
     Rests = queryRest.docs;
 
     if ((size == 1)) {
-      var thisRest = Rests[0].data();
+      var thisRest = Rests.data();
       name = thisRest.name;
       console.log(name);
       document.getElementById("RestName").innerHTML = name;
