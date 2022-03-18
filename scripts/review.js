@@ -29,7 +29,7 @@ function writeReview() {
   let LastName = document.getElementById("LastName").value;
   let Email = document.getElementById("Email").value;
   let Review = document.getElementById("Review").value;
-  let Rating = document.getElementById("Rating").value;
+  let Rating = document.querySelector('input[name="Rating"]:checked').value;
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
