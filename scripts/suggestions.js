@@ -71,6 +71,7 @@ function populateCardsDynamically() {
                 restCard.querySelector('.card-title').innerHTML = restName;
                 restCard.querySelector('#check_in').onclick = () => setRestData(restID);
                 restCard.querySelector('#detail').onclick = () => setRestData(restID);
+                restCard.querySelector('#review').onclick = () => setRestData(restID);
                 restCard.querySelector('img').src = `../images/${restID}.jpg`;
                 restCardGroup.appendChild(restCard);
             })
