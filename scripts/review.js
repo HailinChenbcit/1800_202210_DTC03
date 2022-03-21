@@ -25,6 +25,7 @@ db.collection("Restaurants").where("id", "==", restID)
 
 // Write Check-in form
 function writeReview() {
+  let Restaurant = document.getElementById("RestName").innerHTML;
   let FirstName = document.getElementById("FirstName").value;
   let LastName = document.getElementById("LastName").value;
   let Email = document.getElementById("Email").value;
@@ -40,6 +41,7 @@ function writeReview() {
         // Start a new collection and add all data in it.
         db.collection("Reviews")
           .add({
+            Restaurant: Restaurant,
             FirstName: FirstName,
             LastName: LastName,
             Email: Email,
