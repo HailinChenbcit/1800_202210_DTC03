@@ -49,72 +49,70 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- Check in -->
-    <form class="mb-5">
-      <h4 class="mb-5 text-center"><span id="RestName"></span></h4>
-
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                  <label class="form-label" for="Firstname">First name</label>
-                  <input type="text" id="FirstName" class="form-control" placeholder="First Name" />
+      <form class="mb-5">
+        <h4 class="mb-5 text-center"><span id="RestName"></span></h4>
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6">
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="Firstname">First name</label>
+                    <input type="text" id="FirstName" class="form-control" placeholder="First Name" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example2">Last name</label>
+                    <input type="text" id="LastName" class="form-control" placeholder="Last Name" />
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="form-outline">
-                  <label class="form-label" for="form3Example2">Last name</label>
-                  <input type="text" id="LastName" class="form-control" placeholder="Last Name" />
+  
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="Email" class="form-control" placeholder="name@example.com" />
+              </div>
+  
+              <!-- Phone number input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="Phone">Phone</label>
+                <input type="phone" id="Phone" class="form-control" placeholder="Phone#" />
+              </div>
+  
+              <!-- Timepicker -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="cs-form form-outline">
+                    <label class="form-label" for="Firstname">Arrive Time</label>
+                    <input type="time" id="ArrivalTime" class="form-control"/>
+                  </div>
+                </div>
+                <!-- Party Size -->
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label">Party Size</label>
+                    <select id="PartySize" class="form-select" aria-label="Default select example">
+                      <option selected>1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="email">Email</label>
-              <input type="email" id="Email" class="form-control" placeholder="name@example.com" />
-            </div>
-
-            <!-- Phone number input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="Phone">Phone</label>
-              <input type="phone" id="Phone" class="form-control" placeholder="Phone#" />
-            </div>
-
-            <!-- Timepicker -->
-            <div class="row mb-4">
-              <div class="col">
-                <div class="cs-form form-outline">
-                  <label class="form-label" for="Firstname">Arrive Time</label>
-                  <input type="time" id="ArrivalTime" class="form-control"/>
-                </div>
-              </div>
-              <!-- Party Size -->
-              <div class="col">
-                <div class="form-outline">
-                  <label class="form-label">Party Size</label>
-                  <select id="PartySize" class="form-select" aria-label="Default select example">
-                    <option selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4" onclick="writeCheckIn(), addCapacity()">
-              Check in
-            </button>
-              <a class="btn btn-primary btn-block mb-4" style="float: right;" href="../main_page/suggestions.html" role="button">Cancel</a>
-        </div>
-    </form>
-    </div>
-    </div>
+  
+              <!-- Submit button -->
+              <button type="button" class="btn btn-primary btn-block mb-4" onclick="writeCheckIn(), addCapacity()">
+                Check in
+              </button>
+                <a class="btn btn-primary btn-block mb-4" style="float: right;" href="../main_page/suggestions.html" role="button">Cancel</a>
+          </div>
+      </form>
     <!-- Check in -->
 
     <!-- Footer -->

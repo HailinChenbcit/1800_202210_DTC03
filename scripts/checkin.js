@@ -61,6 +61,8 @@ function writeCheckIn() {
       console.log("no user signed in");
     }
   });
+  // after above done call next func
+  
 }
 
 
