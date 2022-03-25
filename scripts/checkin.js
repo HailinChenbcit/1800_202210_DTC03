@@ -5,14 +5,14 @@ db.collection("Restaurants").where("id", "==", restID)
   .then((queryRest) => {
     //see how many results you have got from the query
     size = queryRest.size;
-    console.log(size)
+    // console.log(size)
     // get the documents of query
     Rests = queryRest.docs;
 
     if ((size == 1)) {
       var thisRest = Rests[0].data();
       name = thisRest.name;
-      console.log(name);
+      // console.log(name);
       document.getElementById("RestName").innerHTML = name;
     } else {
       console.log("Query has more than one data");
@@ -59,4 +59,35 @@ function writeCheckIn() {
       console.log("no user signed in");
     }
   });
+}
+
+
+// increment capacity
+function addCapacity(restID) {
+  db.collection("Restaurants").where("id", "==", restID)
+    .get()
+    .then((queryRest) => {
+      //see how many results you have got from the query
+      size = queryRest.size;
+      // console.log(size)
+      // get the documents of query
+      Rests = queryRest.docs;
+
+      if (size == 1) {
+        id = Rests[0].id;
+        console.log(id)
+        currentCapacity = queryRest.docs.current_population;
+        maxCapacity = queryRest.docs.capacity;
+        if (currentCapacity < maxCapacity){
+          db.collection("Restaurants").doc(id).update({
+            current_population: firebase.firestore.FieldValue.increment(1)  
+        })
+      }
+      } else {
+        console.log("Query has more than one data");
+      }
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
 }
