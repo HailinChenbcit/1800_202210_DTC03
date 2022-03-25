@@ -1,5 +1,6 @@
 let restID = localStorage.getItem("restID");
 
+// Display dynamic restaurant name
 db.collection("Restaurants").where("id", "==", restID)
   .get()
   .then((queryRest) => {
@@ -60,9 +61,12 @@ function writeCheckIn() {
       console.log("no user signed in");
     }
   });
+}
 
-  // increment capacity
-  db.collection("Restaurants").where("id", "==", restID)
+
+// Increment capacity
+function addCapacity() {
+  db.collection("CheckInRequests").where("RestID", "==", restID)
     .get()
     .then((queryRest) => {
       //see how many results you have got from the query
@@ -72,20 +76,22 @@ function writeCheckIn() {
 
       if (size == 1) {
         id = Rests[0].id;
-        console.log(id)
-        currentCapacity = queryRest.docs.current_population;
-        maxCapacity = queryRest.docs.capacity;
         var addCapacity = queryRest.docs.PartySize;
-        console.log(currentCapacity, maxCapacity)
-
-        if (currentCapacity < maxCapacity) {
-          db.collection("Restaurants").doc(id).update({
-            current_population: firebase.firestore.FieldValue.increment(addCapacity)
+        db.collection("Restaurants").where("id", "==", restID)
+          .get()
+          .then((queryCheck) => {
+            currentCapacity = queryCheck.docs.current_population;
+            maxCapacity = queryCheck.docs.capacity;
+            console.log(currentCapacity, maxCapacity)
+            if (currentCapacity < maxCapacity) {
+              db.collection("Restaurants").doc(id).update({
+                current_population: firebase.firestore.FieldValue.increment(addCapacity)
+              })
+            }
+            else {
+              alert("You can't check in now due to full capacity, please try again later.")
+            }
           })
-        }
-        else {
-          alert("You can't check in now due to full capacity, please try again later.")
-        }
       }
       else {
         console.log("Query has more than one data");
@@ -95,4 +101,3 @@ function writeCheckIn() {
       console.log("Error getting documents: ", error);
     });
 }
-
