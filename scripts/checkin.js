@@ -48,6 +48,7 @@ function writeCheckIn() {
             ArrivalTime: ArrivalTime,
             PartySize: PartySize,
             UID: userID,
+            RestID: restID,
           })
           .then(() => {
             // console.log("successful write data")
@@ -59,17 +60,13 @@ function writeCheckIn() {
       console.log("no user signed in");
     }
   });
-}
 
-
-// increment capacity
-function addCapacity(restID) {
+  // increment capacity
   db.collection("Restaurants").where("id", "==", restID)
     .get()
     .then((queryRest) => {
       //see how many results you have got from the query
       size = queryRest.size;
-      // console.log(size)
       // get the documents of query
       Rests = queryRest.docs;
 
@@ -78,12 +75,19 @@ function addCapacity(restID) {
         console.log(id)
         currentCapacity = queryRest.docs.current_population;
         maxCapacity = queryRest.docs.capacity;
-        if (currentCapacity < maxCapacity){
+        var addCapacity = queryRest.docs.PartySize;
+        console.log(currentCapacity, maxCapacity)
+
+        if (currentCapacity < maxCapacity) {
           db.collection("Restaurants").doc(id).update({
-            current_population: firebase.firestore.FieldValue.increment(1)  
-        })
+            current_population: firebase.firestore.FieldValue.increment(addCapacity)
+          })
+        }
+        else {
+          alert("You can't check in now due to full capacity, please try again later.")
+        }
       }
-      } else {
+      else {
         console.log("Query has more than one data");
       }
     })
@@ -91,3 +95,4 @@ function addCapacity(restID) {
       console.log("Error getting documents: ", error);
     });
 }
+
