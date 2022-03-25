@@ -49,78 +49,79 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- Review  -->
-    <form class="mb-5">
-      <h4 class="mb-5 text-center"><span id="RestName"></span></h4>
+    <div style="margin-left: 5%; margin-right: 5%;">
+      <form class="mb-5">
+        <h4 class="mb-5 text-center"><span id="RestName"></span></h4>
 
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                  <label class="form-label" for="Firstname">First Name</label>
-                  <input type="text" id="FirstName" class="form-control" placeholder="Name" />
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6">
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="Firstname">First Name</label>
+                    <input type="text" id="FirstName" class="form-control" placeholder="Name" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example2">Last name</label>
+                    <input type="text" id="LastName" class="form-control" placeholder="Last Name" />
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="form-outline">
-                  <label class="form-label" for="form3Example2">Last name</label>
-                  <input type="text" id="LastName" class="form-control" placeholder="Last Name" />
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="Email" class="form-control" placeholder="name@example.com" />
+              </div>
+              <!-- Review input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="Review">Description</label>
+                  <input type="email" id="Review" class="form-control" placeholder="Tell us about your time!" />
                 </div>
-              </div>
-            </div>
 
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="email">Email</label>
-              <input type="email" id="Email" class="form-control" placeholder="name@example.com" />
-            </div>
-            <!-- Review input -->
-            <div class="form-outline mb-4">
-                <label class="form-label" for="Review">Description</label>
-                <input type="email" id="Review" class="form-control" placeholder="Tell us about your time!" />
+                <!-- Rating -->
+                <label><span style="display:inline-block; font-weight: bold;">Rating </span></label>
+
+                <div></div>
+          
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" for="Rating" type="radio" name="Rating" value="1">
+                    <label>1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" for="Rating" type="radio" name="Rating" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" for="Rating" type="radio" name="Rating" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" for="Rating" type="radio" name="Rating" value="4">
+                  <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" for="Rating" type="radio" name="Rating" value="5">
+                  <label>5</label>
               </div>
 
-              <!-- Rating -->
-              <label><span style="display:inline-block; font-weight: bold;">Rating </span></label>
+              <div>
+                  <br>
+              <!-- Submit button -->
+              <button type="button" class="btn btn-primary btn-block mb-4" onclick="writeReview()">
+                Submit
+              </button>
+              </div>
 
-              <div></div>
-        
-              <div class="form-check form-check-inline">
-                  <input class="form-check-input" for="Rating" type="radio" name="Rating" value="1">
-                  <label>1</label>
-              </div>
-              <div class="form-check form-check-inline">
-                  <input class="form-check-input" for="Rating" type="radio" name="Rating" value="2">
-                  <label>2</label>
-              </div>
-              <div class="form-check form-check-inline">
-                  <input class="form-check-input" for="Rating" type="radio" name="Rating" value="3">
-                  <label>3</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" for="Rating" type="radio" name="Rating" value="4">
-                <label>4</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" for="Rating" type="radio" name="Rating" value="5">
-                <label>5</label>
-            </div>
-
-            <div>
-                <br>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4" onclick="writeReview()">
-              Submit
-            </button>
-            </div>
-
-        </div>
-    </form>
+          </div>
+      </form>
+      </div>
+      </div>
     </div>
-    </div>
-
 
     <!-- Footer -->
     <nav id="footerPlaceholder"></nav>
