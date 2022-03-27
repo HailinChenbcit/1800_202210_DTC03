@@ -1,6 +1,9 @@
+var position = null
+
 // MAPBOX DISPLAY
 function showRestsOnMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWNoZW4zIiwiYSI6ImNsMGZyNWRtZzB2angzanBjcHVkNTQ2YncifQ.fTdfEXaQ70WoIFLZ2QaRmQ';
+
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -10,17 +13,25 @@ function showRestsOnMap() {
 
     // Navigation and User center button
     map.addControl(new mapboxgl.NavigationControl());
-    map.addControl(
-        new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            // When active the map will receive updates to the device's location as it changes.
-            trackUserLocation: true,
-            // Draw an arrow next to the location dot to indicate which direction the device is heading.
-            showUserHeading: true
-        })
-    );
+    var geolocate = new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true,
+                    showUserLocation: true,
+                },
+                // When active the map will receive updates to the device's location as it changes.
+                trackUserLocation: true,
+                // Draw an arrow next to the location dot to indicate which direction the device is heading.
+                showUserHeading: true,
+            });
+
+    map.addControl(geolocate);
+    geolocate.on('geolocate', function (e) {
+        var lon = e.coords.longitude;
+        var lat = e.coords.latitude
+        position = [lon, lat];
+        console.log(position);
+        return position
+    });
 
     map.on('load', () => {
         const features = []
@@ -111,13 +122,21 @@ function showRestsOnMap() {
                 map.getCanvas().style.cursor = '';
             });
 
+
             //Click to add circle -> show circle after user click 'locate' button 
+            // map.on('click', function (e) {
+            //     // showPosition(e)
+            //     var eventLngLat = [e.lngLat.lng, e.lngLat.lat];
+            //     console.log(eventLngLat)
+            //     var searchRadius = makeRadius(eventLngLat, 500);
+            //     map.getSource('search-radius').setData(searchRadius);
+            // });
+
             map.on('click', function (e) {
                 var eventLngLat = [e.lngLat.lng, e.lngLat.lat];
-                console.log(eventLngLat)
+                // console.log(eventLngLat)
                 var searchRadius = makeRadius(eventLngLat, 500);
                 map.getSource('search-radius').setData(searchRadius);
-
             });
 
         })
@@ -129,19 +148,20 @@ showRestsOnMap()
 // USER LOCATION
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(getPosition);
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-getLocation()
-
 var userlat;
 var userlong;
 
-function showPosition(position) {
+function getPosition(position) {
     userlat = position.coords.latitude;
     userlong = position.coords.longitude;
+    coordinates_array = [userlong, userlat]
+    // console.log(coordinates_array)
+    return coordinates_array
 }
 
 
@@ -150,5 +170,4 @@ function makeRadius(lngLatArray, radiusInMeters) {
     var point = turf.point(lngLatArray)
     var buffered = turf.buffer(point, radiusInMeters, { units: 'meters' });
     return buffered;
-
 }
