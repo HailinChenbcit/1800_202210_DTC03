@@ -10,7 +10,7 @@ function writeRestList() {
         rating: "3.4/5",
         price: "$$",
         coordinates: [-123.11535188078236, 49.28274402264293],
-        url: "https://en.wikipedia.org/wiki/Main_Page",
+        url: "https://www.peacefulrestaurant.com/",
         capacity: 50,
         current_population: 30
     });
@@ -22,7 +22,7 @@ function writeRestList() {
         rating: "4.4/5",
         price: "$$$$",
         coordinates: [-123.11934112777243, 49.28341752492466],
-        url: "https://en.wikipedia.org/wiki/Main_Page",
+        url: "https://hawksworthrestaurant.com/",
         capacity: 30,
         current_population: 10
 
@@ -35,7 +35,7 @@ function writeRestList() {
         rating: "4.2/5",
         price: "$$",
         coordinates: [-123.1143726547167, 49.284259162539655],
-        url: "https://en.wikipedia.org/wiki/Main_Page",
+        url: "https://gyozabar.ca/",
         capacity: 50,
         current_population: 50
 
