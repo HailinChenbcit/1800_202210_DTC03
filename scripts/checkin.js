@@ -35,11 +35,37 @@ function writeCheckIn() {
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      db.collection("Restaurants").where("id", "==", restID)
+        .get()
+        .then(allChecks => {
+          allChecks.forEach(doc => {
+            var currentCapacity = doc.data().current_population;
+            var maxCapacity = doc.data().capacity;
+            console.log(currentCapacity, maxCapacity)
+            if (currentCapacity < maxCapacity) {
+              db.collection("Restaurants").where("id", "==", restID)
+                .get()
+                .then(queryCheck => {
+                  size = queryCheck.size;
+                  Checks = queryCheck.docs;
+                  if (size == 1) {
+                    id = Checks[0].id;
+                    db.collection("Restaurants").doc(id).update({
+                      current_population: firebase.firestore.FieldValue.increment(PartySize)
+                    })
+                  }
+                })
+            }
+            else {
+              alert("You can't check in now due to full capacity, please try again later.")
+              window.location.replace("checkin.html");
+            }
+          })
+        })
       var currentUser = db.collection("users").doc(user.uid);
       var userID = user.uid;
       //get the document for current user.
-      currentUser.get().then((userDoc) => {
-        // Start a new collection and add all data in it.
+      currentUser.get().then(() => {
         db.collection("CheckInRequests")
           .add({
             FirstName: FirstName,
@@ -51,90 +77,13 @@ function writeCheckIn() {
             UID: userID,
             RestID: restID,
           })
-          .then(() => {
-            // console.log("successful write data")
-            window.location.href = "confirmation.html";
-          })
-          .then(() => {
-            // Increment capacity
-            db.collection("CheckInRequests").where("RestID", "==", restID)
-              .get()
-              .then((queryRest) => {
-                //see how many results you have got from the query
-                size = queryRest.size;
-                // get the documents of query
-                Rests = queryRest.docs;
-
-                if (size == 1) {
-                  id = Rests[0].id;
-                  var addCapacity = queryRest.docs.PartySize;
-                  db.collection("Restaurants").where("id", "==", restID)
-                    .get()
-                    .then((queryCheck) => {
-                      currentCapacity = queryCheck.docs.current_population;
-                      maxCapacity = queryCheck.docs.capacity;
-                      console.log(currentCapacity, maxCapacity)
-                      if (currentCapacity < maxCapacity) {
-                        db.collection("Restaurants").doc(id).update({
-                          current_population: firebase.firestore.FieldValue.increment(addCapacity)
-                        })
-                      }
-                      else {
-                        alert("You can't check in now due to full capacity, please try again later.")
-                      }
-                    })
-                }
-                else {
-                  console.log("Query has more than one data");
-                }
-              })
-              .catch((error) => {
-                console.log("Error getting documents: ", error);
-              });
-          })
+        .then(() => {
+          window.location.href = "confirmation.html";
+        })
       });
-    } else {
-      // No user is signed in.
+    }
+    else {
       console.log("no user signed in");
     }
   });
-  // after above done call next func
 }
-
-
-// function addCapacity() {
-//   db.collection("CheckInRequests").where("RestID", "==", restID)
-//     .get()
-//     .then((queryRest) => {
-//       //see how many results you have got from the query
-//       size = queryRest.size;
-//       // get the documents of query
-//       Rests = queryRest.docs;
-
-//       if (size == 1) {
-//         id = Rests[0].id;
-//         var addCapacity = queryRest.docs.PartySize;
-//         db.collection("Restaurants").where("id", "==", restID)
-//           .get()
-//           .then((queryCheck) => {
-//             currentCapacity = queryCheck.docs.current_population;
-//             maxCapacity = queryCheck.docs.capacity;
-//             console.log(currentCapacity, maxCapacity)
-//             if (currentCapacity < maxCapacity) {
-//               db.collection("Restaurants").doc(id).update({
-//                 current_population: firebase.firestore.FieldValue.increment(addCapacity)
-//               })
-//             }
-//             else {
-//               alert("You can't check in now due to full capacity, please try again later.")
-//             }
-//           })
-//       }
-//       else {
-//         console.log("Query has more than one data");
-//       }
-//     })
-//     .catch((error) => {
-//       console.log("Error getting documents: ", error);
-//     });
-// }
