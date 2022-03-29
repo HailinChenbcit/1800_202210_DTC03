@@ -1,4 +1,6 @@
 .DS_Store
 *.logs
 node_modules/
+.vscode
 settings.json
+firebaseAPI_TEAM03.js
