@@ -14,9 +14,11 @@ db.collection("Restaurants")
       var thisRest = Rests[0].data();
       name = thisRest.name;
       rate = thisRest.rating;
+      detail = thisRest.description;
       console.log(name);
       document.getElementById("Rest_Name").innerHTML = name;
       document.getElementById("rating").innerHTML = rate;
+      document.getElementById("details").innerHTML = rate;
     } else {
       console.log("Query has more than one data");
     }
@@ -24,6 +26,35 @@ db.collection("Restaurants")
   .catch((error) => {
     console.log("Error getting documents: ", error);
   });
+  
+
+let review = localStorage.getItem("review");
+
+db.collection("Reviews")
+  .where("id", "==", review)
+  .get()
+  .then((queryRest) => {
+    //see how many results you have got from the query
+    size = queryRest.size;
+    // get the documents of query
+    Rests = queryRest.docs;
+    console.log(Rests);
+
+    if (size == 1) {
+      var thisRest = Rests[0].data();
+      name = thisRest.name;
+      rate = thisRest.rating;
+      console.log(name);
+      document.getElementById("reviews").innerHTML = name;
+    } else {
+      console.log("Query has more than one data");
+    }
+  })
+  .catch((error) => {
+    console.log("Error getting documents: ", error);
+  });
+
+
 
 
 

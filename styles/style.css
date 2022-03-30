@@ -8,9 +8,6 @@
     display: list-item;
 }
 
-.listing_cards{
-    text-align: center;
-}
 
 .background{
     border-color: lightgray;
@@ -24,14 +21,15 @@
 }
 
 .restaurant_image{
-    width: 25%;
+    width: 80%;
 }
 
 .detail_text{
-    padding: 10px;
+    padding-left: 15%;
     margin: auto;
     width: 50%;
     text-align: left;
+    float: left;
     
 }
 
@@ -69,6 +67,9 @@ padding-bottom: 20px;
     font-size: small;
 }
 
+.reviews{
+    float: left;
+}
 .review_text{
     padding-left: 26%;
     padding-right: 40%;
