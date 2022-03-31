@@ -75,7 +75,7 @@ function writeCheckIn() {
             ArrivalTime: ArrivalTime,
             PartySize: PartySize,
             UID: userID,
-            RestID: restID,
+            id: restID,
           })
         .then(() => {
           window.location.href = "confirmation.html";

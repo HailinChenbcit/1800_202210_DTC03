@@ -41,7 +41,7 @@ function writeReview() {
         // Start a new collection and add all data in it.
         db.collection("Reviews")
           .add({
-            Restaurant: Restaurant,
+            name: Restaurant,
             FirstName: FirstName,
             LastName: LastName,
             Email: Email,
