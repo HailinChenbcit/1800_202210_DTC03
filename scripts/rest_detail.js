@@ -16,7 +16,6 @@ db.collection("Restaurants")
       rate = thisRest.rating;
       console.log(restaurant_name);
       document.getElementById("Rest_Name").innerHTML = restaurant_name;
-      document.getElementById("rating").innerHTML = rate;
       make_doughnut_chart(restaurant_name);
       get_reviews(restaurant_name);
     } else {
@@ -88,12 +87,12 @@ function make_doughnut_chart(current_pop, open_seats) {
 
 function get_reviews(restaurant_name) {
   let reviewCardTemplate = document.getElementById("reviewCardTemplate");
-  let ReviewCardGroup = document.getElementById("ReviewGroup");
+  let ReviewCardGroup = document.getElementById("ReviewCardGroup");
 
   db.collection("Reviews")
-    .where("name", "==", restaurant_name)
+    .where('name', "==", restaurant_name)
     // .orderBy("length") //NEW LINE;  what do you want to sort by?
-    .limit(3) //NEW LINE:  how many do you want to get?
+    // .limit(3) //NEW LINE:  how many do you want to get?
     .get()
     .then((allReviews) => {
       console.log("hello")
@@ -117,15 +116,6 @@ function get_reviews(restaurant_name) {
           "Last updated: " +
           doc.data().timestamp.toDate();
         
-        // // testReviewCard.querySelector("img").src = `./images/${reviewID}.jpg`;
-
-        // testReviewCard.querySelector("i").id = "save-" + reviewID;
-
-        // testReviewCard.querySelector("i").onclick = () =>
-        //   saveBookmark(reviewID);
-
-        // // testReviewCard.querySelector(".read-more").href =
-        // //   "eachHike.html?hikeName=" + hikeName + "&id=" + reviewID;
 
         ReviewCardGroup.appendChild(testReviewCard);
       });
