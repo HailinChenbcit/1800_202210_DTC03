@@ -28,31 +28,7 @@ db.collection("Restaurants")
   });
   
 
-let review = localStorage.getItem("review");
 
-db.collection("Reviews")
-  .where("id", "==", review)
-  .get()
-  .then((queryRest) => {
-    //see how many results you have got from the query
-    size = queryRest.size;
-    // get the documents of query
-    Rests = queryRest.docs;
-    console.log(Rests);
-
-    if (size == 1) {
-      var thisRest = Rests[0].data();
-      name = thisRest.name;
-      rate = thisRest.rating;
-      console.log(name);
-      document.getElementById("reviews").innerHTML = name;
-    } else {
-      console.log("Query has more than one data");
-    }
-  })
-  .catch((error) => {
-    console.log("Error getting documents: ", error);
-  });
 
 
 
@@ -140,22 +116,19 @@ function get_reviews(restaurant_name) {
           "min <br>" +
           "Last updated: " +
           doc.data().timestamp.toDate();
-        testReviewCard.querySelector("a").onclick = () => setReviewData(reviewID);
-        // testReviewCard.querySelector("img").src = `./images/${reviewID}.jpg`;
+        
+        // // testReviewCard.querySelector("img").src = `./images/${reviewID}.jpg`;
 
-        testReviewCard.querySelector("i").id = "save-" + reviewID;
+        // testReviewCard.querySelector("i").id = "save-" + reviewID;
 
-        testReviewCard.querySelector("i").onclick = () =>
-          saveBookmark(reviewID);
+        // testReviewCard.querySelector("i").onclick = () =>
+        //   saveBookmark(reviewID);
 
-        // testReviewCard.querySelector(".read-more").href =
-        //   "eachHike.html?hikeName=" + hikeName + "&id=" + reviewID;
+        // // testReviewCard.querySelector(".read-more").href =
+        // //   "eachHike.html?hikeName=" + hikeName + "&id=" + reviewID;
 
         ReviewCardGroup.appendChild(testReviewCard);
       });
     });
 }
 
-function setReviewData(id) {
-  localStorage.setItem("reviewID", id);
-}
