@@ -25,11 +25,6 @@ db.collection("Restaurants")
   .catch((error) => {
     console.log("Error getting documents: ", error);
   });
-  
-
-
-
-
 
 var ctx = document.getElementById("capChart").getContext("doughnut");
 total_cap = null;
@@ -90,35 +85,27 @@ function get_reviews(restaurant_name) {
   let ReviewCardGroup = document.getElementById("ReviewCardGroup");
 
   db.collection("Reviews")
-    .where('name', "==", restaurant_name)
-    // .orderBy("length") //NEW LINE;  what do you want to sort by?
-    // .limit(3) //NEW LINE:  how many do you want to get?
+    .where("name", "==", restaurant_name)
+    .limit(5) //NEW LINE:  how many do you want to get?
     .get()
     .then((allReviews) => {
-      console.log("hello")
+      console.log("hello");
       allReviews.forEach((doc) => {
         var FirstName = doc.data().FirstName; //gets the Firstname field
-        var reviewID = doc.data().id;
-        var rating = doc.data().rating; //gets the rating ID field
-        var review = doc.data().review; //gets the review field
+        var Rating = doc.data().Rating; //gets the rating ID field
+        var Review = doc.data().Review; //gets the review field
         var timestamp = doc.data().timestamp; // gets the timestamp from review
         let testReviewCard = reviewCardTemplate.content.cloneNode(true);
         testReviewCard.querySelector(".card-title").innerHTML = FirstName;
-        // testReviewCard.querySelector(".card-length").innerHTML = hikeLength;
-        //NEW LINE: update to display length, duration, last updated
         testReviewCard.querySelector(".card-length").innerHTML =
-          "Length: " +
-          doc.data().rating +
-          " km <br>" +
-          "Duration: " +
-          doc.data().review +
-          "min <br>" +
-          "Last updated: " +
-          doc.data().timestamp.toDate();
-        
+          "Rating: " + doc.data().Rating + " / 5 <br>";
+        testReviewCard.querySelector(".card-text").innerHTML =
+          doc.data().Review;
+        testReviewCard.querySelector(".text-muted").innerHTML = doc
+          .data()
+          .timestamp.toDate();
 
         ReviewCardGroup.appendChild(testReviewCard);
       });
     });
 }
-
