@@ -23,13 +23,13 @@ Content of the project folder:
 
 ```
  Top level of project folder: 
-└──checkin
-└──images
-└──main_page
-└──restaurants
-└──scripts
-└──skeleton
-└──styles
+└──checkin                   # check in feature file
+└──images                    # iamges file
+└──main_page                 # main features file
+└──restaurants               # restaurants details file
+└──scripts                   # All javascripts file
+└──skeleton                  # Navbar and footer file
+└──styles                    # All css files
 └── .gitignore               # Git ignore file
 └── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
@@ -37,50 +37,48 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├──checkin
-    /checkin.html                # Check in page
-    /confirmation.html                # Check in confirmation page
+    /checkin.html            # Check in page
+    /confirmation.html       # Check in success page
 ├──images
-    /background1.jpg                # 
-    /background2.jpg                # 
-    /background3.jpg                # 
-    /checkin.jpg                # 
-    /DT01.jpg                # 
-    /DT02.jpg                # 
-    /DT03.jpg                # 
-    /DT04.jpg                # 
-    /favicon.ico                # 
-    /food10.jpg                # 
-    /food20.jpg                # 
-    /image.jpg                # Logo Image
-    /login_background.jpg     # Login background image
-    /Placeholder.jpg                # index page background image
+    /background1.jpg         # Carousel image in main page
+    /background2.jpg         # Carousel image in main page
+    /background3.jpg         # Carousel image in main page
+    /DT01.jpg                # Restaurant1 food image
+    /DT02.jpg                # Restaurant2 food image
+    /DT03.jpg                # Restaurant3 food image
+    /DT04.jpg                # Restaurant4 food image
+    /favicon.ico             # favicon
+    /food10.jpg              # Food image1 in restaurt_detail page
+    /food20.jpg              # Food image2 in restaurt_detail page
+    /image.jpg               # Logo Image
+    /login_background.jpg    # Login background image
+    /Placeholder.jpg         # Index page background image
 ├──main_page
-    /help.html                # 
-    /login.html                # 
-    /main.html                # 
-    /map.html                # 
-    /suggestions.html                # 
+    /help.html               # 
+    /login.html              # Login page
+    /main.html               # Main page that show all features
+    /map.html                # Map view page
+    /suggestions.html        # Suggestion cards list page
 ├──restaurants
-    /confirmation.html                # 
-    /restaurant_details.html                # 
-    /review.html                # 
+    /confirmation.html       # Review submit success page
+    /restaurant_details.html # Details of selected restaurants page
+    /review.html             # Adding review
 ├──scripts
-    /authentications.js                # 
-    /checkin.js                # 
-    /firebaseAPI_TEAM03.js                # 
-    /map.js                # 
-    /rest_detail.js                # 
-    /review.js                # 
-    /script.js                # 
-    /skeleton.js                # 
-    /suggestions.js                # 
+    /authentications.js      # 
+    /checkin.js              # 
+    /firebaseAPI_TEAM03.js   # 
+    /map.js                  # 
+    /rest_detail.js          # 
+    /review.js               # 
+    /script.js               # 
+    /skeleton.js             # 
+    /suggestions.js          # 
 ├──skeleton
-    /footer.html                # 
+    /footer.html             # 
     /nav.html                # 
 ├──styles
-    /checkin.html                # 
-    /skelenton.html                # 
-    /style.html                # 
+    /skelenton.html          # 
+    /style.html              # 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
@@ -100,8 +98,9 @@ Tips for file naming files and folders:
 - Logo homemade!
 
 ## Contact 
-* John Smith - jsmith@my.bcit.ca 
-* ...
+* Hailin Chen - hchen256@my.bcit.ca 
+* Carson Olafson -
+* Yuen Mo -
 
 ## Acknowledgements 
 * <a href="https://fontawesome.com/">Font Awesome</a>
