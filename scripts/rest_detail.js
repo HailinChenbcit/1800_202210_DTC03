@@ -20,7 +20,7 @@ db.collection("Restaurants")
 
       console.log(restaurant_name);
       document.getElementById("Rest_Name").innerHTML = restaurant_name;
-      document.getElementById("details").innerHTML = "Rating: " + rate + "<br>" + cuisine + "<br>" + "Price: " + price + "<br>" + description + "<br>";
+      document.getElementById("details").innerHTML ="<br>" + "<h5> Rating: </h5>" + rate + "<h5> Cuisine: </h5>" + cuisine + "<br>"  + "<h5>Price: </h5>" + price + "<br>" + description + "<br>";
       make_doughnut_chart(restaurant_name);
       get_reviews(restaurant_name);
     } else {
