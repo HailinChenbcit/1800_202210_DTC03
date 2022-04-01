@@ -79,7 +79,6 @@ function populateCardsDynamically() {
         })
 }
 populateCardsDynamically();
-
 // LocalStorage RestaurantName
 function setRestData(id) {
     localStorage.setItem("restID", id);

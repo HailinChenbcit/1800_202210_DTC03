@@ -14,8 +14,13 @@ db.collection("Restaurants")
       var thisRest = Rests[0].data();
       restaurant_name = thisRest.name;
       rate = thisRest.rating;
+      cuisine = thisRest.cuisine;
+      price = thisRest.price;
+      description = thisRest.description;
+
       console.log(restaurant_name);
       document.getElementById("Rest_Name").innerHTML = restaurant_name;
+      document.getElementById("details").innerHTML = "Rating: " + rate + "<br>" + cuisine + "<br>" + "Price: " + price + "<br>" + description + "<br>";
       make_doughnut_chart(restaurant_name);
       get_reviews(restaurant_name);
     } else {
