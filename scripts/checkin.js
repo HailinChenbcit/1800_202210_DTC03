@@ -87,3 +87,18 @@ function writeCheckIn() {
     }
   });
 }
+
+// Clear data every 3 Hour
+function clearCapacity(){
+  db.collection("CheckInRequests")
+  .get()
+  .then((allReviews) => {
+    console.log("hello");
+    allReviews.forEach((doc) => {
+      var cur_capacity = doc.data().ArrivalTime;
+      console.log(cur_capacity)
+    })
+  });
+}
+
+clearCapacity()
