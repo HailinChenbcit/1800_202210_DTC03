@@ -102,15 +102,15 @@ function clearCapacity(){
       int_time = parseInt(cur_capacity)
       date = new Date();
       cur_time = date.getHours()
-      console.log(int_time)
+      console.log(int_time, cur_time)
       if (cur_time > int_time && Math.abs(int_time - cur_time) > 3 ){
         console.log(uid + " will be delete")
         // delete the document? Or just change it to False?
-        db.collection("Restaurants")
-        .doc(uid)
-        .set({status: false})
+        // db.collection("CheckInRequests")
+        // .get()
+        // .where('UID', '==', uid)
+        // .set({status: false})
       }
-      // clearData(uid)
     })
   });
 }
