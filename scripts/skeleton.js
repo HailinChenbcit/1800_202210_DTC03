@@ -9,10 +9,3 @@ function loadSkeleton(){
     console.log($('#footerPlaceholder').load('../skeleton/footer.html'));
 }
 loadSkeleton();  //invoke the function
-
-
-function changeStatus(){
-    document.getElementsByClassName("nav-link").onclick = function(){
-        Element.setAttribute("class", "nav-link active");
-    }
-}

@@ -54,7 +54,7 @@ It has the following subfolders and files:
     /login_background.jpg    # Login background image
     /Placeholder.jpg         # Index page background image
 ├──main_page
-    /help.html               # 
+    /help.html               # Help information page
     /login.html              # Login page
     /main.html               # Main page that show all features
     /map.html                # Map view page
@@ -64,21 +64,20 @@ It has the following subfolders and files:
     /restaurant_details.html # Details of selected restaurants page
     /review.html             # Adding review
 ├──scripts
-    /authentications.js      # 
-    /checkin.js              # 
-    /firebaseAPI_TEAM03.js   # 
-    /map.js                  # 
-    /rest_detail.js          # 
-    /review.js               # 
-    /script.js               # 
-    /skeleton.js             # 
-    /suggestions.js          # 
+    /authentications.js      # Firebase authentication
+    /checkin.js              # Check in logic
+    /firebaseAPI_TEAM03.js   # FirebaseAPI info
+    /map.js                  # Display map view, locate user
+    /rest_detail.js          # Display restaurant details
+    /review.js               # Write review in review.html
+    /skeleton.js             # Navbar and footer
+    /suggestions.js          # Write data dynamically into database, and populate restaurant cards
 ├──skeleton
-    /footer.html             # 
-    /nav.html                # 
+    /footer.html             # Footer of all pages, except login page and index page
+    /nav.html                # Navbar of all pages, except login page and index page
 ├──styles
-    /skelenton.html          # 
-    /style.html              # 
+    /skelenton.css           # Navbar and footer style
+    /style.css               # Main page style
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
