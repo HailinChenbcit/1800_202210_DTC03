@@ -76,11 +76,10 @@ function writeCheckIn() {
             PartySize: PartySize,
             UID: userID,
             id: restID,
-            status: true,
           })
-        .then(() => {
-          window.location.href = "confirmation.html";
-        })
+          .then(() => {
+            window.location.href = "confirmation.html";
+          })
       });
     }
     else {
@@ -91,28 +90,37 @@ function writeCheckIn() {
 
 
 // Clear data every 3 Hour
-function clearCapacity(){
+function clearCapacity() {
   db.collection("CheckInRequests")
-  .get()
-  .then((allReviews) => {
-    allReviews.forEach((doc) => {
-      var cur_capacity = doc.data().ArrivalTime;
-      var uid = doc.data().UID
+    .get()
+    .then((allReviews) => {
+      allReviews.forEach((doc) => {
+        var curCapacity = doc.data().ArrivalTime;
+        var uid = doc.data().UID
+        var PartySize = parseInt(doc.data().PartySize)
 
-      int_time = parseInt(cur_capacity)
-      date = new Date();
-      cur_time = date.getHours()
-      console.log(int_time, cur_time)
-      if (cur_time > int_time && Math.abs(int_time - cur_time) > 3 ){
-        console.log(uid + " will be delete")
-        // delete the document? Or just change it to False?
-        // db.collection("CheckInRequests")
-        // .get()
-        // .where('UID', '==', uid)
-        // .set({status: false})
-      }
-    })
-  });
+        int_time = parseInt(curCapacity)
+        currentTime = new Date().getHours()
+        console.log(int_time, currentTime, PartySize, uid)
+
+        if (curCapacity >= PartySize && currentTime > int_time && Math.abs(int_time - currentTime) > 3) {
+          console.log(uid + " will be delete")
+          // update Capacity 
+          db.collection("Restaurants").where("id", "==", restID)
+            .get()
+            .then(queryCheck => {
+              size = queryCheck.size;
+              Checks = queryCheck.docs;
+              if (size == 1) {
+                id = Checks[0].id;
+                db.collection("Restaurants").doc(id).update({
+                  current_population: firebase.firestore.FieldValue.increment(-PartySize)
+                })
+              }
+            })
+        }
+      })
+    });
 }
 
 clearCapacity()
