@@ -24,14 +24,14 @@ Content of the project folder:
 ```
  Top level of project folder: 
 └──checkin                   # check in feature file
-└──images                    # iamges file
-└──main_page                 # main features file
-└──restaurants               # restaurants details file
-└──scripts                   # All javascripts file
-└──skeleton                  # Navbar and footer file
-└──styles                    # All css files
-└── .gitignore               # Git ignore file
-└── index.html               # landing HTML file, this is what users see when you come to url
+├──images                    # iamges file
+├──main_page                 # main features file
+├──restaurants               # restaurants details file
+├──scripts                   # All javascripts file
+├──skeleton                  # Navbar and footer file
+├──styles                    # All css files
+├── .gitignore               # Git ignore file
+├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
 
 It has the following subfolders and files:
@@ -85,7 +85,6 @@ It has the following subfolders and files:
 Firebase hosting files: 
 ├── .firebaserc...
 
-
 ```
 
 Tips for file naming files and folders:
@@ -98,10 +97,11 @@ Tips for file naming files and folders:
 
 ## Contact 
 * Hailin Chen - hchen256@my.bcit.ca 
-* Carson Olafson -
-* Yuen Mo -
+* Carson Olafson - 
+* Yuen Mo - 
 
 ## Acknowledgements 
 * <a href="https://fontawesome.com/">Font Awesome</a>
 * <a href="https://getbootstrap.com/">Bootstrap</a>
 * <a href="https://mapbox.com/">Mapbox</a>
+* <a href="https://cdnjs.com/libraries/Chart.js">Cloudfare</a>

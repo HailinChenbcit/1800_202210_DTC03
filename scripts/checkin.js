@@ -41,7 +41,7 @@ function writeCheckIn() {
           allChecks.forEach(doc => {
             var currentCapacity = doc.data().current_population;
             var maxCapacity = doc.data().capacity;
-            console.log(currentCapacity, maxCapacity)
+            // console.log(currentCapacity, maxCapacity)
             if (currentCapacity < maxCapacity) {
               db.collection("Restaurants").where("id", "==", restID)
                 .get()
@@ -101,7 +101,7 @@ function clearCapacity() {
 
         int_time = parseInt(curCapacity)
         currentTime = new Date().getHours()
-        console.log(int_time, currentTime, PartySize, uid)
+        // console.log(int_time, currentTime, PartySize, uid)
 
         if (curCapacity >= PartySize && currentTime > int_time && Math.abs(int_time - currentTime) > 3) {
           console.log(uid + " will be delete")
@@ -110,7 +110,6 @@ function clearCapacity() {
             .get()
             .then(queryCheck => {
               size = queryCheck.size;
-              Checks = queryCheck.docs;
               if (size == 1) {
                 id = Checks[0].id;
                 db.collection("Restaurants").doc(id).update({

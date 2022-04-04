@@ -65,9 +65,8 @@ function populateCardsDynamically() {
             allRestaurants.forEach(doc => {
                 var restName = doc.data().name;
                 var restID = doc.data().id;
-                // var restDesc = doc.data().description
-
                 let restCard = restListTemplate.content.cloneNode(true);
+                
                 restCard.querySelector('.card-title').innerHTML = restName;
                 restCard.querySelector('#check_in').onclick = () => setRestData(restID);
                 restCard.querySelector('#detail').onclick = () => setRestData(restID);
@@ -79,6 +78,7 @@ function populateCardsDynamically() {
         })
 }
 populateCardsDynamically();
+
 // LocalStorage RestaurantName
 function setRestData(id) {
     localStorage.setItem("restID", id);
