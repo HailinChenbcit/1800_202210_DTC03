@@ -1,5 +1,5 @@
 let restID = localStorage.getItem("restID");
-
+// populate restaurants detail cards
 db.collection("Restaurants")
   .where("id", "==", restID)
   .get()
@@ -85,6 +85,7 @@ function make_doughnut_chart(current_pop, open_seats) {
   });
 }
 
+// get restaurant reviews
 function get_reviews(restaurant_name) {
   let reviewCardTemplate = document.getElementById("reviewCardTemplate");
   let ReviewCardGroup = document.getElementById("ReviewCardGroup");

@@ -23,7 +23,7 @@ db.collection("Restaurants").where("id", "==", restID)
   });
 
 
-// Write Check-in form
+// Write review form
 function writeReview() {
   let Restaurant = document.getElementById("RestName").innerHTML;
   let FirstName = document.getElementById("FirstName").value;

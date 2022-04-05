@@ -1,3 +1,4 @@
+// write in restaurants list
 function writeRestList() {
     //define a variable for the collection you want to create in Firestore to populate data
     var listRef = db.collection("Restaurants");
