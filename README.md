@@ -8,7 +8,7 @@
 Due to capacity issues at restaurants and bars during the Olympics, we are creating a web application to help Vancouver residents save time with public access capacity tracking, giving them the data they need to plan their day.
 
 * Hailin(Adam) Chen - github: HailinChenbcit
-* My name is Carson and I'm a happy camper
+* Carson Olafson - github: carcango
 * Hi my name is Gary. I'm excited about this project because it will allow me to work in a team-based environment.
 	
 ## Technologies
