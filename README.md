@@ -81,10 +81,6 @@ It has the following subfolders and files:
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
-
-Firebase hosting files: 
-├── .firebaserc...
-
 ```
 
 Tips for file naming files and folders:
