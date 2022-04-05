@@ -97,8 +97,8 @@ Tips for file naming files and folders:
 
 ## Contact 
 * Hailin Chen - hchen256@my.bcit.ca 
-* Carson Olafson - 
-* Yuen Mo - 
+* Carson Olafson - colafson1@my.bcit.ca
+* Yuen Mo - ymo3@my.bcit.ca
 
 ## Acknowledgements 
 * <a href="https://fontawesome.com/">Font Awesome</a>
@@ -106,3 +106,4 @@ Tips for file naming files and folders:
 * <a href="https://mapbox.com/">Mapbox</a>
 * <a href="https://cdnjs.com/libraries/Chart.js">Cloudfare</a>
 * <a href="https://unsplash.com/">Unsplashed</a>
+* <a href="https://www.netlify.com/">Netlify</a>
