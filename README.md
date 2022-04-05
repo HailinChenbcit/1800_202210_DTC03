@@ -9,7 +9,7 @@ Due to capacity issues at restaurants and bars during the Olympics, we are creat
 
 * Hailin(Adam) Chen - github: HailinChenbcit
 * Carson Olafson - github: carcango
-* Hi my name is Gary. I'm excited about this project because it will allow me to work in a team-based environment.
+* Hi my name is Gary. I'm excited about this project because it will allow me to work in a team-based environment. - github: whosgurr
 	
 ## Technologies
 Technologies used for this project:
@@ -54,7 +54,6 @@ It has the following subfolders and files:
     /login_background.jpg    # Login background image
     /Placeholder.jpg         # Index page background image
 ├──main_page
-    /help.html               # Help information page
     /login.html              # Login page
     /main.html               # Main page that show all features
     /map.html                # Map view page
