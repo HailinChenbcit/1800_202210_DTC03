@@ -39,7 +39,9 @@ function writeCheckIn() {
           allChecks.forEach(doc => {
             var currentCapacity = doc.data().current_population;
             var maxCapacity = doc.data().capacity;
-            if (currentCapacity < maxCapacity) {
+            console.log(parseInt(currentCapacity) + parseInt(PartySize))
+            console.log(maxCapacity)
+            if (parseInt(currentCapacity) + parseInt(PartySize) <= maxCapacity) {
               db.collection("Restaurants").where("id", "==", restID)
                 .get()
                 .then(queryCheck => {
