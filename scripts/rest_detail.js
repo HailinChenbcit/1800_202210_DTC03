@@ -1,14 +1,12 @@
 let restID = localStorage.getItem("restID");
+
 // populate restaurants detail cards
 db.collection("Restaurants")
   .where("id", "==", restID)
   .get()
   .then((queryRest) => {
-    //see how many results you have got from the query
     size = queryRest.size;
-    // get the documents of query
     Rests = queryRest.docs;
-    console.log(Rests);
 
     if (size == 1) {
       var thisRest = Rests[0].data();
@@ -57,6 +55,7 @@ db.collection("Restaurants")
     console.log("Error getting documents: ", error);
   });
 
+// Doughnut chart 
 function make_doughnut_chart(current_pop, open_seats) {
   // this function creates the populated doughnut chart
   var xValues = ["Filled", "Empty"];
@@ -90,7 +89,7 @@ function get_reviews(restaurant_name) {
 
   db.collection("Reviews")
     .where("name", "==", restaurant_name)
-    .limit(5) //NEW LINE:  how many do you want to get?
+    .limit(5) //limit to 5
     .get()
     .then((allReviews) => {
       console.log("hello");

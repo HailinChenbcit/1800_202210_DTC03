@@ -123,16 +123,6 @@ function showRestsOnMap() {
                 map.getCanvas().style.cursor = '';
             });
 
-
-            //Click to add circle -> show circle after user click 'locate' button 
-            // map.on('click', function (e) {
-            //     // showPosition(e)
-            //     var eventLngLat = [e.lngLat.lng, e.lngLat.lat];
-            //     console.log(eventLngLat)
-            //     var searchRadius = makeRadius(eventLngLat, 500);
-            //     map.getSource('search-radius').setData(searchRadius);
-            // });
-
             map.on('click', function (e) {
                 var eventLngLat = [e.lngLat.lng, e.lngLat.lat];
                 // console.log(eventLngLat)
@@ -161,7 +151,6 @@ function getPosition(position) {
     userlat = position.coords.latitude;
     userlong = position.coords.longitude;
     coordinates_array = [userlong, userlat]
-    // console.log(coordinates_array)
     return coordinates_array
 }
 

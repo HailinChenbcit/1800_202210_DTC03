@@ -1,6 +1,6 @@
 let restID = localStorage.getItem("restID");
 
-// 
+// Query restaurantID to dynamically show restaurant name
 db.collection("Restaurants").where("id", "==", restID)
   .get()
   .then((queryRest) => {

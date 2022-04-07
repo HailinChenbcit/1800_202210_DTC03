@@ -1,6 +1,5 @@
-// write in restaurants list to database
+// write restaurants information list to database
 function writeRestList() {
-    //define a variable for the collection you want to create in Firestore to populate data
     var listRef = db.collection("Restaurants");
 
     listRef.add({
@@ -56,7 +55,7 @@ function writeRestList() {
     });
 }
 
-// Display Cards
+// Display Cards by querying database Restaurants collection
 function populateCardsDynamically() {
     let restListTemplate = document.getElementById("restListTemplate");
     let restCardGroup = document.getElementById("restCardGroup");

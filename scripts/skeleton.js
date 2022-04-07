@@ -8,4 +8,4 @@ function loadSkeleton(){
     console.log($('#navbarPlaceholder').load('../skeleton/nav.html'));
     console.log($('#footerPlaceholder').load('../skeleton/footer.html'));
 }
-loadSkeleton();  //invoke the function
+loadSkeleton(); 
