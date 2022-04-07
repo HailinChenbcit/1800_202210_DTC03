@@ -47,7 +47,7 @@ function showRestsOnMap() {
                     'type': 'Feature',
                     'properties': {
                         'description': `<strong>Current Capacity: ${cur_capacity}/${total_capacity}</strong><p><a href="${url}" target="_blank" title="Opens in a new window">${rest_name}</a> 
-                        Some description here</p><a href="../restaurants/restaurant_details.html" title="Opens in a new window">See Details</a>`,
+                        Check the menu</p><a href="../restaurants/restaurant_details.html" title="Opens in a new window">See Details</a>`,
                         'icon': 'restaurant-15'
                     },
                     'geometry': {
