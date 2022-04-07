@@ -87,7 +87,7 @@ Tips for file naming files and folders:
 * use dashes (not underscore) for word separation
 
 ## Resources
-- In-app icons from Feather v4.28.0 (Open Source https://feathericons.com/)
+- In-app icons from Font Awesome
 - Logo homemade!
 
 ## Contact 
