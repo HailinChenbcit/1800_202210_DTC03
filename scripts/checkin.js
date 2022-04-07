@@ -101,7 +101,7 @@ function clearCapacity() {
 
         int_time = parseInt(curCapacity)
         currentTime = new Date().getHours()
-        
+        // decrease the capcacity if the difference > 3 hrs
         if (curCapacity >= PartySize && currentTime > int_time && Math.abs(int_time - currentTime) > 3) {
           console.log(uid + " will be delete")
           // update Capacity 

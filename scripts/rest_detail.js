@@ -17,8 +17,6 @@ db.collection("Restaurants")
       cuisine = thisRest.cuisine;
       price = thisRest.price;
       description = thisRest.description;
-
-      console.log(restaurant_name);
       document.getElementById("Rest_Name").innerHTML = restaurant_name;
       document.getElementById("details").innerHTML = "<br>" + "<h5> Rating: </h5>" + rate + "<h5> Cuisine: </h5>" + cuisine + "<br>" + "<h5>Price: </h5>" + price + "<br>" + description + "<br>";
       make_doughnut_chart(restaurant_name);
@@ -101,7 +99,7 @@ function get_reviews(restaurant_name) {
         var Rating = doc.data().Rating; //gets the rating ID field
         var Review = doc.data().Review; //gets the review field
         var timestamp = doc.data().timestamp.toDate(); // gets the timestamp from review
-        
+
         let testReviewCard = reviewCardTemplate.content.cloneNode(true);
         testReviewCard.querySelector(".card-title").innerHTML = FirstName;
         testReviewCard.querySelector(".card-length").innerHTML = "Rating: " + Rating + " / 5 <br>";
