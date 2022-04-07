@@ -48,7 +48,7 @@ function writeRestList() {
         rating: "3.7/5",
         price: "$",
         coordinates: [-123.11430484944383, 49.28352322905107],
-        url: "https://en.wikipedia.org/wiki/Main_Page",
+        url: "https://www.facebook.com/kimskoreanbbqhouse/",
         capacity: 50,
         current_population: 45
 
