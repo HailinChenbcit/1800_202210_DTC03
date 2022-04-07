@@ -92,7 +92,6 @@ function get_reviews(restaurant_name) {
     .limit(5) //limit to 5
     .get()
     .then((allReviews) => {
-      console.log("hello");
       allReviews.forEach((doc) => {
         var FirstName = doc.data().FirstName; //gets the Firstname field
         var Rating = doc.data().Rating; //gets the rating ID field
